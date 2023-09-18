@@ -12,7 +12,7 @@ void test2() {
     for (i=0; i<10; i++) {
         aleatorio(v, 9);
         listar_vector(v, 9);
-        a = sumaSubMax1(v, 9);
-        b = sumaSubMax2(v, 9);
+        a = sumaSubMaxCuad(v, 9);
+        b = sumaSubMaxLineal(v, 9);
         printf("%15d%15d\n", a, b);
     } }

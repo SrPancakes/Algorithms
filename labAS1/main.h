@@ -8,13 +8,16 @@
 /* -- LIBRARIES -- */
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /* -- HEADERS -- */
 int sumaSubMaxCuad(int[], int);
 int sumaSubMaxLineal(int[], int);
+void test2();
 
 /* -- UTILITIES -- */
 void inicializar_semilla();
 void aleatorio(int[], int);
+void listar_vector(int[], int);
 
 #endif //LABAS1_MAIN_H
