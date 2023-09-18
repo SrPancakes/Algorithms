@@ -5,10 +5,11 @@
 #include "main.h"
 
 int sumaSubMaxCuad(int values[], int n) {
-    int sumaMax = 0;
-    for (int i = 0; i < n; i++) {
-        int estaSuma = 0;
-        for (int j = 0; j < n; j++) {
+    int i, j;
+    int estaSuma, sumaMax = 0;
+    for (i = 0; i < n; i++) {
+        estaSuma = 0;
+        for (j = i; j < n; j++) {
             estaSuma += values[j];
             if (estaSuma > sumaMax) sumaMax = estaSuma;
         }
