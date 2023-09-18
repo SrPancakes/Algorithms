@@ -17,12 +17,14 @@ void test1() {
     };
 
     printf("test\n");
-    printf("%33s%15s%15s\n", "", "sumaSubMax1", "sumaSubMax2");
+    printf("%28s%15s%15s\n", "", "sumaSubMax1", "sumaSubMax2");
     for (int i = 0; i < 6; i++) {
         listar_vector(v[i], 5);
         a = sumaSubMaxCuad(v[i], 5);
         b = sumaSubMaxLineal(v[i], 5);
+        a != b ? printf("\033[0;31m") : printf("\033[0m");
         printf("%15d%15d\n", a, b);
+        printf("\033[0m");
     }
     printf("\n");
 }
