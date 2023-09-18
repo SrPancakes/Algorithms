@@ -10,7 +10,11 @@
 #include <stdlib.h>
 
 /* -- HEADERS -- */
-int sumaSubMaxCuad(int values[], int n);
-int sumaSubMaxLineal(int values[], int n);
+int sumaSubMaxCuad(int[], int);
+int sumaSubMaxLineal(int[], int);
+
+/* -- UTILITIES -- */
+void inicializar_semilla();
+void aleatorio(int[], int);
 
 #endif //LABAS1_MAIN_H

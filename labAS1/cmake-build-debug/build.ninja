@@ -67,6 +67,18 @@ build CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o: C_COMPILER__labAS1_unscanned_D
   OBJECT_DIR = CMakeFiles/labAS1.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
 
+build CMakeFiles/labAS1.dir/test02.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/test02.c || cmake_object_order_depends_target_labAS1
+  DEP_FILE = CMakeFiles/labAS1.dir/test02.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/labAS1.dir
+  OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
+
+build CMakeFiles/labAS1.dir/utilities.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/utilities.c || cmake_object_order_depends_target_labAS1
+  DEP_FILE = CMakeFiles/labAS1.dir/utilities.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/labAS1.dir
+  OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target labAS1
@@ -75,7 +87,7 @@ build CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o: C_COMPILER__labAS1_unscanned_D
 #############################################
 # Link the executable labAS1
 
-build labAS1: C_EXECUTABLE_LINKER__labAS1_Debug CMakeFiles/labAS1.dir/main.c.o CMakeFiles/labAS1.dir/sumaSubMaxCuad.c.o CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o
+build labAS1: C_EXECUTABLE_LINKER__labAS1_Debug CMakeFiles/labAS1.dir/main.c.o CMakeFiles/labAS1.dir/sumaSubMaxCuad.c.o CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o CMakeFiles/labAS1.dir/test02.c.o CMakeFiles/labAS1.dir/utilities.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/labAS1.dir
   POST_BUILD = :
