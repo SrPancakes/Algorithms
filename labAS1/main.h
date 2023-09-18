@@ -13,6 +13,7 @@
 /* -- HEADERS -- */
 int sumaSubMaxCuad(int[], int);
 int sumaSubMaxLineal(int[], int);
+void test1();
 void test2();
 
 /* -- UTILITIES -- */

@@ -16,7 +16,7 @@ void aleatorio(int values[], int n) {
 void listar_vector(int values[], int n) {
     printf("[ ");
     for (int i = 0; i < n; i++) {
-        printf("%2d ", values[i]);
+        printf("%3d ", values[i]);
     }
     printf("]");
 }

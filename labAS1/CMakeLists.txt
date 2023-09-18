@@ -8,4 +8,5 @@ add_executable(labAS1 main.c
         sumaSubMaxLineal.c
         main.h
         test02.c
-        utilities.c)
+        utilities.c
+        test01.c)

@@ -15,4 +15,6 @@ void test2() {
         a = sumaSubMaxCuad(v, 9);
         b = sumaSubMaxLineal(v, 9);
         printf("%15d%15d\n", a, b);
-    } }
+    }
+    printf("\n");
+}
