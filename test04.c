@@ -48,7 +48,7 @@ void printRes(float finalTimes[2][7]){
   char ast = ' ';
   double n;
 
-  printf("\n\nTEST 4\n\nSumaSubMax Cuad (ms)\n\n");
+  printf("\n\nTEST 4\n\nSumaSubMax Cuad (microsegundos)\n\n");
   printf("\t    n\t\t\tt(n)\t\tt(n)/n^1.8\t\tt(n)/n^2\t\t t(n)/n^2.2\n");
 
   for(i = 0; i < 7; i++){
@@ -59,7 +59,7 @@ void printRes(float finalTimes[2][7]){
      finalTimes[0][i] / pow(n, 2.0), finalTimes[0][i] / pow(n, 2.2));
   }
 
-  printf("\n\nSumaSubMax Lineal (ms)\n\n");
+  printf("\n\nSumaSubMax Lineal (microsegundos)\n\n");
   printf("\t    n\t\t\t     t(n)\t\t t(n)/n^0.7\t\t      t(n)/n\t\t"
   " t(n)/n^1.1\n");
 

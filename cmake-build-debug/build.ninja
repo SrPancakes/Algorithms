@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/lucas/CLionProjects/ALG/labAS1/cmake-build-debug/
+cmake_ninja_workdir = /home/rodrigo/Desktop/AL/Algorithms/labAS1/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target labAS1
 
@@ -49,39 +49,51 @@ cmake_ninja_workdir = /Users/lucas/CLionProjects/ALG/labAS1/cmake-build-debug/
 
 build cmake_object_order_depends_target_labAS1: phony || CMakeFiles/labAS1.dir
 
-build CMakeFiles/labAS1.dir/main.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/main.c || cmake_object_order_depends_target_labAS1
+build CMakeFiles/labAS1.dir/main.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/main.c || cmake_object_order_depends_target_labAS1
   DEP_FILE = CMakeFiles/labAS1.dir/main.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/labAS1.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
 
-build CMakeFiles/labAS1.dir/sumaSubMaxCuad.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/sumaSubMaxCuad.c || cmake_object_order_depends_target_labAS1
+build CMakeFiles/labAS1.dir/sumaSubMaxCuad.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/sumaSubMaxCuad.c || cmake_object_order_depends_target_labAS1
   DEP_FILE = CMakeFiles/labAS1.dir/sumaSubMaxCuad.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/labAS1.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
 
-build CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/sumaSubMaxLineal.c || cmake_object_order_depends_target_labAS1
+build CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/sumaSubMaxLineal.c || cmake_object_order_depends_target_labAS1
   DEP_FILE = CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/labAS1.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
 
-build CMakeFiles/labAS1.dir/test02.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/test02.c || cmake_object_order_depends_target_labAS1
+build CMakeFiles/labAS1.dir/test02.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/test02.c || cmake_object_order_depends_target_labAS1
   DEP_FILE = CMakeFiles/labAS1.dir/test02.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/labAS1.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
 
-build CMakeFiles/labAS1.dir/utilities.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/utilities.c || cmake_object_order_depends_target_labAS1
+build CMakeFiles/labAS1.dir/utilities.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/utilities.c || cmake_object_order_depends_target_labAS1
   DEP_FILE = CMakeFiles/labAS1.dir/utilities.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/labAS1.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
 
-build CMakeFiles/labAS1.dir/test01.c.o: C_COMPILER__labAS1_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS1/test01.c || cmake_object_order_depends_target_labAS1
+build CMakeFiles/labAS1.dir/test01.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/test01.c || cmake_object_order_depends_target_labAS1
   DEP_FILE = CMakeFiles/labAS1.dir/test01.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/labAS1.dir
+  OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
+
+build CMakeFiles/labAS1.dir/test03.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/test03.c || cmake_object_order_depends_target_labAS1
+  DEP_FILE = CMakeFiles/labAS1.dir/test03.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/labAS1.dir
+  OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
+
+build CMakeFiles/labAS1.dir/test04.c.o: C_COMPILER__labAS1_unscanned_Debug /home/rodrigo/Desktop/AL/Algorithms/labAS1/test04.c || cmake_object_order_depends_target_labAS1
+  DEP_FILE = CMakeFiles/labAS1.dir/test04.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/labAS1.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS1.dir
 
@@ -93,8 +105,8 @@ build CMakeFiles/labAS1.dir/test01.c.o: C_COMPILER__labAS1_unscanned_Debug /User
 #############################################
 # Link the executable labAS1
 
-build labAS1: C_EXECUTABLE_LINKER__labAS1_Debug CMakeFiles/labAS1.dir/main.c.o CMakeFiles/labAS1.dir/sumaSubMaxCuad.c.o CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o CMakeFiles/labAS1.dir/test02.c.o CMakeFiles/labAS1.dir/utilities.c.o CMakeFiles/labAS1.dir/test01.c.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
+build labAS1: C_EXECUTABLE_LINKER__labAS1_Debug CMakeFiles/labAS1.dir/main.c.o CMakeFiles/labAS1.dir/sumaSubMaxCuad.c.o CMakeFiles/labAS1.dir/sumaSubMaxLineal.c.o CMakeFiles/labAS1.dir/test02.c.o CMakeFiles/labAS1.dir/utilities.c.o CMakeFiles/labAS1.dir/test01.c.o CMakeFiles/labAS1.dir/test03.c.o CMakeFiles/labAS1.dir/test04.c.o
+  FLAGS = -g
   OBJECT_DIR = CMakeFiles/labAS1.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -106,7 +118,7 @@ build labAS1: C_EXECUTABLE_LINKER__labAS1_Debug CMakeFiles/labAS1.dir/main.c.o C
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/lucas/CLionProjects/ALG/labAS1/cmake-build-debug && "/Users/lucas/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/rodrigo/Desktop/AL/Algorithms/labAS1/cmake-build-debug && /snap/clion/250/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -117,7 +129,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/lucas/CLionProjects/ALG/labAS1/cmake-build-debug && "/Users/lucas/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S/Users/lucas/CLionProjects/ALG/labAS1 -B/Users/lucas/CLionProjects/ALG/labAS1/cmake-build-debug
+  COMMAND = cd /home/rodrigo/Desktop/AL/Algorithms/labAS1/cmake-build-debug && /snap/clion/250/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/rodrigo/Desktop/AL/Algorithms/labAS1 -B/home/rodrigo/Desktop/AL/Algorithms/labAS1/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -133,7 +145,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/lucas/CLionProjects/ALG/labAS1/cmake-build-debug
+# Folder: /home/rodrigo/Desktop/AL/Algorithms/labAS1/cmake-build-debug
 
 build all: phony labAS1
 
@@ -144,14 +156,14 @@ build all: phony labAS1
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Users/lucas/CLionProjects/ALG/labAS1/CMakeLists.txt /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/rodrigo/Desktop/AL/Algorithms/labAS1/CMakeLists.txt /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-C.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/lucas/CLionProjects/ALG/labAS1/CMakeLists.txt /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Users/lucas/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build /home/rodrigo/Desktop/AL/Algorithms/labAS1/CMakeLists.txt /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU-C.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux-GNU.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/Linux.cmake /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################

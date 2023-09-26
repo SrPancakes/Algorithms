@@ -2,7 +2,7 @@
 
 void printTimes(float times[2][7]){
   printf("\n\nTEST 3\n\nTIEMPOS:\n\n\tn\t\tSSM CUAD "
-  " (ms)\t\t  SSM LIN (ms)\n");
+  " (microsegundos)\t\t  SSM LIN (microsegundos)\n");
   char ast = ' ';
   double n;
   int i;

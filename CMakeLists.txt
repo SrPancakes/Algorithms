@@ -9,4 +9,6 @@ add_executable(labAS1 main.c
         main.h
         test02.c
         utilities.c
-        test01.c)
+        test01.c
+        test03.c
+        test04.c)
