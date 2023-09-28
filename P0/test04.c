@@ -45,29 +45,30 @@ void bestTimes(float times[2][7], float v1[3][7], float v2[3][7]){
 
 void printRes(float finalTimes[2][7]){
   int i;
-  char ast = ' ';
+  char *ast = " ";
   double n;
 
   printf("\n\nTEST 4\n\nSumaSubMax Cuad (microsegundos)\n\n");
-  printf("\t    n\t\t\tt(n)\t\tt(n)/n^1.8\t\tt(n)/n^2\t\t t(n)/n^2.2\n");
+  printf("%13s%23s%23s%23s%23s\n", "n", "t(n)", "t(n)/n^1.8",
+         "t(n)/n^2", "t(n)/n^2.2");
 
   for(i = 0; i < 7; i++){
     n = 500 * pow(2.0, i);
-    if(finalTimes[0][i] < 500) ast = '*'; else ast = ' ';
-    printf("%c\t%5.0f\t\t  %10.3f\t\t  %5f\t\t%5f\t\t  %6.7f\n", ast, n,
+    if(finalTimes[0][i] < 500) ast = YELLOW"*"; else ast = RESET" ";
+    printf("%s%12.0f%23.3f%23f%23f%23.7f\n"RESET, ast, n,
     finalTimes[0][i], finalTimes[0][i] / pow(n, 1.8),
      finalTimes[0][i] / pow(n, 2.0), finalTimes[0][i] / pow(n, 2.2));
   }
 
   printf("\n\nSumaSubMax Lineal (microsegundos)\n\n");
-  printf("\t    n\t\t\t     t(n)\t\t t(n)/n^0.7\t\t      t(n)/n\t\t"
-  " t(n)/n^1.1\n");
+  printf("%13s%23s%23s%23s%23s\n", "n", "t(n)", "t(n)/n^0.7",
+         "t(n)/n", "t(n)/n^1.1");
 
   for(i = 0; i < 7; i++){
     n = 500 * pow(2.0, i);
-    if(finalTimes[1][i] < 500) ast = '*'; else ast = ' ';
+    if(finalTimes[1][i] < 500) ast = YELLOW"*"; else ast = RESET" ";
 
-    printf("%c\t%5.0f\t\t  %15.3f\t\t  %9.4f\t\t  %10.5f\t\t%11.6f\n", ast, n,
+    printf("%s%12.0f%23.3f%23f%23f%23.7f\n"RESET, ast, n,
     finalTimes[1][i], finalTimes[1][i] / pow(n, 0.7),
      finalTimes[1][i] / pow(n, 0.9), finalTimes[1][i] / pow(n, 1.1));
   }
