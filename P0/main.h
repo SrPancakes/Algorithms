@@ -29,9 +29,9 @@ void test4();
 void inicializar_semilla();
 void aleatorio(int[], int);
 void listar_vector(int[], int);
-double microsegundos();
 
 /* -- TIMES -- */
+double microsegundos();
 float subMaxCuadTime(int v[], int n, int k);
 float subMaxLinealTime(int v[], int n, int k);
 
