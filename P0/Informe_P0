@@ -1,6 +1,6 @@
 TITLE: Algoritmos Práctica 1
 AUTHOR 1: Rodrigo Méijome Quintana     LOGIN 1: rodrigo.meijome
-AUTHOR 2: xxxxxxxxxxxxxx        LOGIN 2: xxxxxxxxxxxx
+AUTHOR 2: Lucas Núñez González        LOGIN 2: l.nunezg
 GROUP: 2.4.3
 DATE: 24/09/2023
 
@@ -57,9 +57,9 @@ Mediante la obtención de la siguiente tabla podemos determinar la complejidad
 
 -NOTAS-
   - El (*) situado a la izquierda de determinados valores significa que su tiempo de
-      ejecución es inferior a 500μs, por lo tanto ejecutamos un bucle el cual lo
-      repite 10 veces en el caso de la SumaSubMaxCuad y 1000 veces en el caso de 
-      SumaSubMaxLineal y hallamos la media resultante.
+      ejecución es inferior a 500μs, por lo que se estimará una medición más precisa
+      realizando la media del tiempo de 10 y 1000 ejecuciones para SumaSubMaxCuad y
+      SumaSubMaxLineal respectivamente.
   - Todas las mediciones de tiempos están expresadas en micro segundos (μs).
 
 SumaSubMax Cuad 
@@ -79,11 +79,10 @@ Cota sobrestimada= n^2.2
 Cota ajustada= n^2
 
 --OBSERVACIONES--
-Podemos observar que la diferencia entre nuestro algoritmo y los y la cota
-  subestimada es creciente, mientras que en la cota sobrestimada ocurre lo opuesto,
-  es decir, tienen tendencia decreciente. En nuestra cota ajustada, la diferencia
-  entre nuestros tiempos y la cota, se sitúan próximos a un valor estable de
-  0.00055*
+Podemos observar que el tiempo de ejecución en base a la cota subestimada
+  crece a medida que aumenta el número de elementos del vector, mientras que 
+  cuando la cota es sobrestimada ocurre lo opuesto. Si ajustamos la cota,
+  descubriremos que los tiempos se estabilizan, rondando todos los 0.00055* μs.
 
 
 SumaSubMax Lineal (ms)
@@ -103,15 +102,14 @@ Cota sobrestimada=n^1.10
 Cota ajustada=n
 
 --OBSERVACIONES--
-Podemos observar que la diferencia entre nuestro algoritmo y los y la cota
-  subestimada es creciente, mientras que en la cota sobrestimada ocurre lo opuesto,
-  es decir, tienen tendencia decreciente. En nuestra cota ajustada, la diferencia
-  entre nuestros tiempos y la cota, se sitúan próximos a un valor estable de
-  0.0042..*
+Podemos observar que el tiempo de ejecución en base a la cota subestimada
+  crece a medida que aumenta el número de elementos del vector, mientras que 
+  cuando la cota es sobrestimada ocurre lo opuesto. Si ajustamos la cota,
+  descubriremos que los tiempos se estabilizan, rondando todos los 0.0042..* μs.
 
 --CONCLUSIONES--
 Podemos deducir que el primer algoritmo (sumaSubMaxCuad) tiene una complejidad
-  computacional de n^2, mientras que la complejidad computacional del  segundo
-  algoritmo (sumaSubMaxLineal) es menor, situándose en n. Con esto podemos
-  concluir que sumaSubMaxLineal será la mejor opción.
+  computacional cuadrática, mientras que la complejidad computacional del  segundo
+  algoritmo (sumaSubMaxLineal) es lineal, por lo que podemos afirmar que la segunda
+  opción será más eficiente y rápida.
 
