@@ -1,0 +1,115 @@
+TITLE: Algoritmos Práctica 1
+AUTHOR 1: Rodrigo Méijome Quintana     LOGIN 1: rodrigo.meijome
+AUTHOR 2: Lucas Núñez González        LOGIN 2: l.nunezg
+GROUP: 2.4.3
+DATE: 24/09/2023
+
+La práctica fue realizada con este dispositivo -->
+Máquina: Intel i5-7200U (4) @ 3.100GHz (8GB RAM)
+Máquina: AMD Ryzen 7 5800h (16) @ 4.400GHz (16GB RAM)
+OS:      Ubuntu 22.04.3 LTS
+Kernel:  Linux 6.2.0-33-generic
+
+
+La realización de esta práctica consiste en la implementación de dos algoritmos,
+  los cuales están destinados a la obtención de la mayor suma consecutiva
+  posible dada una serie de números.
+
+En este primer test, se comprobó la eficacia de los algoritmos, en esta ocasión
+  mediante un array de números ya conocidos.
+
+TEST con los números dados
+[  -9   2  -5  -4   6 ]              6              6
+[   4   0   9   2   5 ]             20             20
+[  -2  -1  -9  -7  -1 ]              0              0
+[   9  -2   1  -7  -8 ]              9              9
+[  15  -2  -5  -4  16 ]             20             20
+[   7  -5   6   7  -7 ]             15             15
+
+
+Por otra parte, en el segundo, se ejecutó el código a la vez que mediante otras
+  funciones se obtenían números aleatorios para la prueba del algoritmo.
+
+TEST de números aleatorios
+[  -2   7  -4   6   2   5  -8  -5   7 ]             16             16
+[   7  -1   6   3   0   0  -5  -5   8 ]             15             15
+[   5  -8  -7  -2  -8   7  -7  -1   1 ]              7              7
+[   2   3  -5  -5   7  -7   1   4   4 ]              9              9
+[  -4   2   5   9  -1  -8   2   9   1 ]             19             19
+[  -8  -6   2   7   8   3   9  -7   1 ]             29             29
+[   7  -5   9  -5   3  -1  -1   8  -3 ]             15             15
+[   1  -1   7  -7   1  -1   7   0   4 ]             11             11
+[   5  -8   3  -3   9   6   5   6   2 ]             28             28
+[  -1   6   1   9   0   3   9   1  -4 ]             29             29
+
+
+
+Atendiendo al enunciado de la práctica 1, nuestro objetivo era la realización de
+  la comprobación de la eficiencia y tiempos de ejecución de los algoritmos
+  implementados mediante vectores de tamaño n, siendo su mínimo valor 500 y
+  duplicándose hasta llegar a un vector de 32000 elementos.
+
+Mediante la obtención de la siguiente tabla podemos determinar la complejidad
+  computacional del algoritmo (ya que en ella se detallan los tiempos de
+  ejecución del mismo) así como realizamos la verificación empírica de su
+  complejidad mediante el uso de una cota sobrestimada y una cota
+  subestimada.
+
+-NOTAS-
+  - El (*) situado a la izquierda de determinados valores significa que su tiempo de
+      ejecución es inferior a 500μs, por lo que se estimará una medición más precisa
+      realizando la media del tiempo de 10 y 1000 ejecuciones para SumaSubMaxCuad y
+      SumaSubMaxLineal respectivamente.
+  - Todas las mediciones de tiempos están expresadas en micro segundos (μs).
+
+SumaSubMax Cuad 
+
+	    n		t(n)	t(n)/n^1.8	t(n)/n^2	 t(n)/n^2.2
+*	  500	     138.900	  0.001926	0.000556	  0.0001603
+ 	 1000	     568.000	  0.002261	0.000568	  0.0001427
+ 	 2000	    2212.000	  0.002529	0.000553	  0.0001209
+ 	 4000	    9842.000	  0.003231	0.000615	  0.0001171
+ 	 8000	   37778.000	  0.003562	0.000590	  0.0000978
+ 	16000	  137275.000	  0.003717	0.000536	  0.0000774
+ 	32000	  550020.000	  0.004277	0.000537	  0.0000675
+
+
+Cota subestimada= n^1.8
+Cota sobrestimada= n^2.2
+Cota ajustada= n^2
+
+--OBSERVACIONES--
+Podemos observar que el tiempo de ejecución en base a la cota subestimada
+  crece a medida que aumenta el número de elementos del vector, mientras que 
+  cuando la cota es sobrestimada ocurre lo opuesto. Si ajustamos la cota,
+  descubriremos que los tiempos se estabilizan, rondando todos los 0.00055* μs.
+
+
+SumaSubMax Lineal (ms)
+
+	    n	     t(n)	 t(n)/n^0.7	      t(n)/n	 t(n)/n^1.1
+*	  500	    1.179	     0.0152	     0.00439	   0.001267
+*	 1000       2.156	     0.0171	     0.00430	   0.001081
+*	 2000       3.748	     0.0183	     0.00401	   0.000876
+*	 4000       7.078	     0.0213	     0.00406	   0.000772
+*	 8000	   13.099	     0.0243	     0.00402	   0.000667
+*	16000      25.671	     0.0293	     0.00422	   0.000609
+*	32000      48.786	     0.0343	     0.00430	   0.000540
+
+
+Cota subestimada= n^0.70
+Cota sobrestimada=n^1.10
+Cota ajustada=n
+
+--OBSERVACIONES--
+Podemos observar que el tiempo de ejecución en base a la cota subestimada
+  crece a medida que aumenta el número de elementos del vector, mientras que 
+  cuando la cota es sobrestimada ocurre lo opuesto. Si ajustamos la cota,
+  descubriremos que los tiempos se estabilizan, rondando todos los 0.0042..* μs.
+
+--CONCLUSIONES--
+Podemos deducir que el primer algoritmo (sumaSubMaxCuad) tiene una complejidad
+  computacional cuadrática, mientras que la complejidad computacional del  segundo
+  algoritmo (sumaSubMaxLineal) es lineal, por lo que podemos afirmar que la segunda
+  opción será más eficiente y rápida.
+
