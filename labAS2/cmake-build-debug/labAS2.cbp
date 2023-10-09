@@ -76,9 +76,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/rodrigo/Desktop/AL/labAS2/ex2.c">
-			<Option target="labAS2"/>
-		</Unit>
 		<Unit filename="/home/rodrigo/Desktop/AL/labAS2/main.c">
 			<Option target="labAS2"/>
 		</Unit>

@@ -129,30 +129,6 @@ labAS2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/labAS2.dir/build.make CMakeFiles/labAS2.dir/build
 .PHONY : labAS2/fast
 
-ex2.o: ex2.c.o
-.PHONY : ex2.o
-
-# target to build an object file
-ex2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/labAS2.dir/build.make CMakeFiles/labAS2.dir/ex2.c.o
-.PHONY : ex2.c.o
-
-ex2.i: ex2.c.i
-.PHONY : ex2.i
-
-# target to preprocess a source file
-ex2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/labAS2.dir/build.make CMakeFiles/labAS2.dir/ex2.c.i
-.PHONY : ex2.c.i
-
-ex2.s: ex2.c.s
-.PHONY : ex2.s
-
-# target to generate assembly for a file
-ex2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/labAS2.dir/build.make CMakeFiles/labAS2.dir/ex2.c.s
-.PHONY : ex2.c.s
-
 main.o: main.c.o
 .PHONY : main.o
 
@@ -258,9 +234,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... labAS2"
-	@echo "... ex2.o"
-	@echo "... ex2.i"
-	@echo "... ex2.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

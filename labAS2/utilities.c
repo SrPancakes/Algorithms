@@ -24,3 +24,11 @@ double microsegundos() { /* obtiene la hora del sistema en microsegundos */
         return 0.0;
     return (t.tv_usec + t.tv_sec * 1000000.0);
 }
+
+int isSorted(int v[], int n){
+    int sorted = 1;
+    for(int i = 0; i < n-1; i++){
+        if(v[i] > v[i+1]) sorted = 0;
+    }
+    return sorted;
+}

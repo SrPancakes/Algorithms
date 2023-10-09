@@ -7,7 +7,6 @@ add_executable(labAS2 main.c
         ordenacionInsercion.c
         ordenacionShell.c
         main.h
-        ex2.c
         utilities.c
         main.c
 )

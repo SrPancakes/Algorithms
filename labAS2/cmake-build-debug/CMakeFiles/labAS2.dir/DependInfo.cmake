@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/rodrigo/Desktop/AL/labAS2/ex2.c" "CMakeFiles/labAS2.dir/ex2.c.o" "gcc" "CMakeFiles/labAS2.dir/ex2.c.o.d"
   "/home/rodrigo/Desktop/AL/labAS2/main.c" "CMakeFiles/labAS2.dir/main.c.o" "gcc" "CMakeFiles/labAS2.dir/main.c.o.d"
   "/home/rodrigo/Desktop/AL/labAS2/ordenacionInsercion.c" "CMakeFiles/labAS2.dir/ordenacionInsercion.c.o" "gcc" "CMakeFiles/labAS2.dir/ordenacionInsercion.c.o.d"
   "/home/rodrigo/Desktop/AL/labAS2/ordenacionShell.c" "CMakeFiles/labAS2.dir/ordenacionShell.c.o" "gcc" "CMakeFiles/labAS2.dir/ordenacionShell.c.o.d"

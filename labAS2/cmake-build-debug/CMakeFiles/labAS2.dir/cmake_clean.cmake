@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/labAS2.dir/ex2.c.o"
-  "CMakeFiles/labAS2.dir/ex2.c.o.d"
   "CMakeFiles/labAS2.dir/main.c.o"
   "CMakeFiles/labAS2.dir/main.c.o.d"
   "CMakeFiles/labAS2.dir/ordenacionInsercion.c.o"

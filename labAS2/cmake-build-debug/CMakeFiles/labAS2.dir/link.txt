@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/labAS2.dir/main.c.o CMakeFiles/labAS2.dir/ordenacionInsercion.c.o CMakeFiles/labAS2.dir/ordenacionShell.c.o CMakeFiles/labAS2.dir/ex2.c.o CMakeFiles/labAS2.dir/utilities.c.o -o labAS2 
+/usr/bin/cc -g CMakeFiles/labAS2.dir/main.c.o CMakeFiles/labAS2.dir/ordenacionInsercion.c.o CMakeFiles/labAS2.dir/ordenacionShell.c.o CMakeFiles/labAS2.dir/utilities.c.o -o labAS2 

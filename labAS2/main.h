@@ -22,6 +22,7 @@ void test();
 void inicializar_semilla();
 void aleatorio(int[], int);
 void listar_vector(int[], int);
+int isSorted(int v[], int n);
 
 /* -- TIMES -- */
 double microsegundos();
