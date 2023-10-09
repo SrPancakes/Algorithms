@@ -9,4 +9,5 @@ add_executable(labAS2 main.c
         main.h
         ex2.c
         utilities.c
+        main.c
 )
