@@ -45,3 +45,32 @@ void initialize_desc(int v[], int n) {
         j--;
     }
 }
+
+double exTime(int v[], int n, int k){
+    int i = 0;
+    double a = microsegundos(), b;
+    for(; i < k; i++){
+        aleatorio(v, n);
+    }
+    b = microsegundos();
+    return b - a;
+}
+
+double ordTime(int v[], int n, int k, void (*func)(int[], int)){
+    int i = 0;
+    double a = microsegundos(), b;
+    func(v, n);
+    b = microsegundos();
+
+    if((b-a) < 500){
+        a = microsegundos();
+        for(; i < k; i++){
+            aleatorio(v, n);
+            func(v, n);
+        }
+        b = microsegundos();
+        return ((b-a) - exTime(v, n, k)) / k;
+    }
+
+    return b - a;
+}

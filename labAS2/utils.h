@@ -11,8 +11,7 @@ void initialize_desc(int[], int);
 
 
 double microsegundos();
-float ord_ins_time(int v[], int n, int k);
-float ord_shell_time(int v[], int n, int k);
+double ordTime(int v[], int n, int k, void (*func)(int[], int));
 
 
 #endif //LABAS2_UTILS_H

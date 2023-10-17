@@ -44,8 +44,16 @@ void ord_shell(int v[], int n) {
 
 int main() {
 
+    void (*ordType)(int[], int);
     inicializar_semilla();
     run_test(17);
+
+    int v[10];
+    aleatorio(v, 10);
+
+
+    ordType = ord_shell;
+    ordTime(v, 10, 10, ordType);
 
     return 0;
 }
