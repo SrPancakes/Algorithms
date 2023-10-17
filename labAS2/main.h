@@ -8,6 +8,10 @@
 #include <time.h>
 #include <sys/time.h>
 
+#include "test.h"
+#include "utils.h"
+
+
 /* -- COLORS --*/
 #define RED     "\x1b[31m"
 #define RESET   "\x1b[0m"
@@ -16,17 +20,6 @@
 /* -- HEADERS -- */
 void ord_ins(int[], int);
 void ord_shell(int[], int);
-void test();
-
-/* -- UTILITIES -- */
-void inicializar_semilla();
-void aleatorio(int[], int);
-void listar_vector(int[], int);
-
-/* -- TIMES -- */
-double microsegundos();
-float ord_ins_time(int v[], int n, int k);
-float ord_shell_time(int v[], int n, int k);
 
 
 #endif //LABAS2_MAIN_H

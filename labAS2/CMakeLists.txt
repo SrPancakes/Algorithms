@@ -4,7 +4,9 @@ project(labAS2 C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(labAS2 main.c
-        ordenacionInsercion.c
-        ordenacionShell.c
         main.h
+        utils.c
+        test.c
+        test.h
+        utils.h
 )

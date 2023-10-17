@@ -23,5 +23,6 @@ void inicializar_semilla();
 void aleatorio(int[], int);
 void listar_vector(int[], int);
 double microsegundos();
+double estimar_tiempo(int*, int, int, int (*f)(int*, int));
 
 #endif //LABAS1_MAIN_H

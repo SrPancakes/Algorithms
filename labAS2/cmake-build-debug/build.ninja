@@ -55,14 +55,14 @@ build CMakeFiles/labAS2.dir/main.c.o: C_COMPILER__labAS2_unscanned_Debug /Users/
   OBJECT_DIR = CMakeFiles/labAS2.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS2.dir
 
-build CMakeFiles/labAS2.dir/ordenacionInsercion.c.o: C_COMPILER__labAS2_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS2/ordenacionInsercion.c || cmake_object_order_depends_target_labAS2
-  DEP_FILE = CMakeFiles/labAS2.dir/ordenacionInsercion.c.o.d
+build CMakeFiles/labAS2.dir/utils.c.o: C_COMPILER__labAS2_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS2/utils.c || cmake_object_order_depends_target_labAS2
+  DEP_FILE = CMakeFiles/labAS2.dir/utils.c.o.d
   FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/labAS2.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS2.dir
 
-build CMakeFiles/labAS2.dir/ordenacionShell.c.o: C_COMPILER__labAS2_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS2/ordenacionShell.c || cmake_object_order_depends_target_labAS2
-  DEP_FILE = CMakeFiles/labAS2.dir/ordenacionShell.c.o.d
+build CMakeFiles/labAS2.dir/test.c.o: C_COMPILER__labAS2_unscanned_Debug /Users/lucas/CLionProjects/ALG/labAS2/test.c || cmake_object_order_depends_target_labAS2
+  DEP_FILE = CMakeFiles/labAS2.dir/test.c.o.d
   FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/labAS2.dir
   OBJECT_FILE_DIR = CMakeFiles/labAS2.dir
@@ -75,7 +75,7 @@ build CMakeFiles/labAS2.dir/ordenacionShell.c.o: C_COMPILER__labAS2_unscanned_De
 #############################################
 # Link the executable labAS2
 
-build labAS2: C_EXECUTABLE_LINKER__labAS2_Debug CMakeFiles/labAS2.dir/main.c.o CMakeFiles/labAS2.dir/ordenacionInsercion.c.o CMakeFiles/labAS2.dir/ordenacionShell.c.o
+build labAS2: C_EXECUTABLE_LINKER__labAS2_Debug CMakeFiles/labAS2.dir/main.c.o CMakeFiles/labAS2.dir/utils.c.o CMakeFiles/labAS2.dir/test.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/labAS2.dir
   POST_BUILD = :

@@ -6,7 +6,7 @@
 
 void testTiempos() {
     int *rv;
-    int n, i = 0, k;
+    int n;
     double tiempo_inicio, tiempo_fin, tiempo_total, tiempo1, tiempo2;
 
     printf("Test Tiempos SumaSubMax\n"
@@ -14,17 +14,26 @@ void testTiempos() {
            "n", "SumaSubMax 1", "SumaSubMax 2");
     for (n = 500; n <= 32000; n *= 2) {
         rv = malloc(sizeof (int) * n);
-        aleatorio(rv, n);
 
+        aleatorio(rv, n);
         tiempo_inicio = microsegundos();
         sumaSubMaxCuad(rv, n);
         tiempo_fin = microsegundos();
         tiempo1 = tiempo_fin - tiempo_inicio;
+        if (tiempo1 < 500) {
+            tiempo1 = estimar_tiempo(rv, n, 10, sumaSubMaxCuad);
+            printf("(*)");
+        } else printf("   ");
 
+        aleatorio(rv, n);
         tiempo_inicio = microsegundos();
         sumaSubMaxLineal(rv, n);
         tiempo_fin = microsegundos();
         tiempo2 = tiempo_fin - tiempo_inicio;
+        if (tiempo2 < 500) {
+            tiempo2 = estimar_tiempo(rv, n, 10, sumaSubMaxLineal);
+            printf("(*)");
+        } else printf("   ");
 
         printf("%5d %15.3f %15.3f\n",
                n, tiempo1, tiempo2);
@@ -41,24 +50,9 @@ void testTiempos() {
         sumaSubMaxCuad(rv, n);
         tiempo_fin = microsegundos();
         tiempo_total = tiempo_fin - tiempo_inicio;
+
         if (tiempo_total < 500) {
-            k = 10;
-            tiempo_inicio = microsegundos();
-            for(; i < k; i++) {
-                aleatorio(rv, n);
-                sumaSubMaxCuad(rv, n);
-            }
-            tiempo_fin = microsegundos();
-            tiempo1 = tiempo_fin - tiempo_inicio;
-
-            tiempo_inicio = microsegundos();
-            for(i = 0; i < k; i++) {
-                aleatorio(rv, n);
-            }
-            tiempo_fin = microsegundos();
-            tiempo2 = tiempo_fin - tiempo_inicio;
-
-            tiempo_total = (tiempo1 - tiempo2) / k;
+            tiempo_total = estimar_tiempo(rv, n, 10, sumaSubMaxCuad);
             printf("(*)");
         }
         else printf("   ");
@@ -81,23 +75,7 @@ void testTiempos() {
         tiempo_total = tiempo_fin - tiempo_inicio;
 
         if (tiempo_total < 500) {
-            k = 10;
-            tiempo_inicio = microsegundos();
-            for(; i < k; i++) {
-                aleatorio(rv, n);
-                sumaSubMaxCuad(rv, n);
-            }
-            tiempo_fin = microsegundos();
-            tiempo1 = tiempo_fin - tiempo_inicio;
-
-            tiempo_inicio = microsegundos();
-            for(i = 0; i < k; i++) {
-                aleatorio(rv, n);
-            }
-            tiempo_fin = microsegundos();
-            tiempo2 = tiempo_fin - tiempo_inicio;
-
-            tiempo_total = (tiempo2 - tiempo1) / k;
+            tiempo_total = estimar_tiempo(rv, n, 10, sumaSubMaxLineal);
             printf("(*)");
         }
         else printf("   ");
