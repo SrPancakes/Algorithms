@@ -132,16 +132,16 @@ void print_res(double finalTimes[2][7], char *string){
     }
 
     printf("\n\nOrdenación Shell con inicialización %s\n\n", string);
-    printf("%13s%23s%23s%23s%23s\n", "n", "t(n)", "t(n)/n^0.7",
-           "t(n)/n", "t(n)/n^1.1");
+    printf("%13s%23s%23s%23s%23s\n", "n", "t(n)", "t(n)/n^1.8",
+           "t(n)/n", "t(n)/n^2.2");
 
     for(i = 0; i < 7; i++){
         n = 500 * pow(2.0, i);
         if(finalTimes[1][i] < 500) ast = YELLOW"*"; else ast = RESET" ";
 
         printf("%s%12.0f%23.3f%23f%23f%23.7f\n"RESET, ast, n,
-               finalTimes[1][i], finalTimes[1][i] / pow(n, 0.7),
-               finalTimes[1][i] / pow(n, 0.9), finalTimes[1][i] / pow(n, 1.1));
+               finalTimes[1][i], finalTimes[1][i] / pow(n, 1.0),
+               finalTimes[1][i] / pow(n, 1.3) * log(n), finalTimes[1][i] / pow(n, 1.3));
     }
 }
 

@@ -45,7 +45,9 @@ void ord_shell(int v[], int n) {
 int main() {
 
     inicializar_semilla();
-    run_test(17);
+    test_complexity(initialize_asc, "ascendente");
+    test_complexity(initialize_desc, "descendente");
+    test_complexity(aleatorio, "aleatoria");
 
     return 0;
 }
