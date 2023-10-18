@@ -54,7 +54,7 @@ void initialize_asc(int v[], int n) {
     }
 }
 
-double exTime(int v[], int n, int k){
+double ex_time(int v[], int n, int k){
     int i = 0;
     double a = microsegundos(), b;
     for(; i < k; i++){
@@ -64,7 +64,7 @@ double exTime(int v[], int n, int k){
     return b - a;
 }
 
-double ordTime(int v[], int n, int k, void (*func)(int[], int)){
+double ord_time(int v[], int n, int k, void (*func)(int[], int)){
     int i = 0;
     double a = microsegundos(), b;
     func(v, n);
@@ -77,13 +77,13 @@ double ordTime(int v[], int n, int k, void (*func)(int[], int)){
             func(v, n);
         }
         b = microsegundos();
-        return ((b-a) - exTime(v, n, k)) / k;
+        return ((b-a) - ex_time(v, n, k)) / k;
     }
 
     return b - a;
 }
 
-void bestTimes(double times[2][7], double v1[3][7], double v2[3][7]){
+void best_times(double times[2][7], double v1[3][7], double v2[3][7]){
     for(int i = 0; i < 7; i++){
         if(v1[0][i] >= v1[1][i] && v1[0][i] >= v1[2][i])
             times[0][i] = v1[0][i];
@@ -99,9 +99,24 @@ void bestTimes(double times[2][7], double v1[3][7], double v2[3][7]){
     }
 }
 
-void printRes(double finalTimes[2][7], char *string){
-    int i;
+void print_times(double times[2][7], char *string){
+    printf("\n\n-- %s --\n\nTIEMPOS:\n\n%9s%35s%37s\n", string, "n", "ORD INS "
+                                                           "(ms)", "ORD SHELL (ms)");
     char *ast = " ";
+    double n;
+    int i;
+    for(i = 0; i < 7; i++){
+        n = 500 * pow(2.0, i);
+        if(times[0][i]<500) ast = YELLOW"*";
+        else ast = RESET" ";
+        printf("%s%8.0f%35.3f%37.3f\n"RESET, ast, n,
+               times[0][i], times[1][i]);
+    }
+}
+
+void print_res(double finalTimes[2][7], char *string){
+    int i;
+    char *ast;
     double n;
 
     printf("\n\nOrdenación por Inserción con inicialización %s\n\n", string);

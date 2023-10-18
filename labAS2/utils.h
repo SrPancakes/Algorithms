@@ -12,9 +12,10 @@ void initialize_asc(int[], int);
 
 
 double microsegundos();
-double ordTime(int v[], int n, int k, void (*func)(int[], int));
-void bestTimes(double[2][7], double[3][7], double[3][7]);
-void printRes(double[2][7], char*);
+double ord_time(int v[], int n, int k, void (*func)(int[], int));
+void best_times(double[2][7], double[3][7], double[3][7]);
+void print_times(double[2][7], char*);
+void print_res(double[2][7], char*);
 
 
 #endif //LABAS2_UTILS_H
