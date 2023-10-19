@@ -1,0 +1,180 @@
+TITLE: Algoritmos Práctica 2
+AUTHOR 1: Rodrigo Méijome Quintana     LOGIN 1: rodrigo.meijome
+AUTHOR 2: Lucas Núñez González        LOGIN 2: l.nunezg
+GROUP: 2.4.3
+DATE: 18/10/2023
+
+La práctica fue realizada con este dispositivo -->
+Máquina: Intel i5-7200U (4) @ 3.100GHz (8GB RAM)
+Máquina: AMD Ryzen 7 5800h (16) @ 4.400GHz (16GB RAM)
+OS:      Ubuntu 22.04.3 LTS
+Kernel:  Linux 6.2.0-33-generic
+
+INTRODUCCIÓN:
+En esta práctica estudiaremos el tiempo de ejecución y realizaremos una comprabación empírica
+  de la complejidad teórica de dos algoritmos cuya función es ordenar ascendentemente un vector. 
+  Usando en el algoritmo de ordenación rápida distintos umbrales.
+
+Creamos la función test para comprobar que ambos algoritmos ordenan el vector correctamente y poder medir el tiempo de ejecución
+  correctamente, como se puede observar tanto en la ordenación por inserción como en la ordenaicón rapida para el vector 
+  con inicialización descendente como para el vector con inicialización aleatoria utilizamos arrays de 17 elementos
+  A continuacion ponemos un ejemplo de lo que nos imprime una ejecución del test por ordenación por inserción y ordenación rápida:
+
+Inicialización aleatoria: 
+-15,  14,   5,  11,  -6,  -3,  -6,  13,  -8, -15,  -3,  13,  13,  -6,  14,  -2, -1
+Está ordenado? 0
+Ordenación por insercion: 
+-15, -15,  -8,  -6,  -6,  -6,  -3,  -3,  -2,  -1,   5,  11,  13,  13,  13,  14, 14
+Está ordenado? 1
+
+
+Inicialización descendente: 
+ 14,  14,  13,  13,  13,  11,   5,  -1,  -2,  -3,  -3,  -6,  -6,  -6,  -8, -15, -15
+Está ordenado? 0
+Ordenación por insercion: 
+-15, -15,  -8,  -6,  -6,  -6,  -3,  -3,  -2,  -1,   5,  11,  13,  13,  13,  14, 14
+Está ordenado? 1
+
+
+Inicialización aleatoria: 
+-11, -15, -12,   4, -10,   5, -15,  10,  -1,  17,   8, -14,  -2,  11,   0,  -6, -2
+Está ordenado? 0
+Ordenación por shell: 
+-15, -15, -14, -12, -11, -10,  -6,  -2,  -2,  -1,   0,   4,   5,   8,  10,  11, 17
+Está ordenado? 1
+
+
+Inicialización descendente: 
+ 17,  11,  10,   8,   5,   4,   0,  -1,  -2,  -2,  -6, -10, -11, -12, -14, -15, -15
+Está ordenado? 0
+Ordenación por shell: 
+-15, -15, -14, -12, -11, -10,  -6,  -2,  -2,  -1,   0,   4,   5,   8,  10,  11, 17
+Está ordenado? 1
+
+Verificación empírica: 
+
+En este apartado calcularemos el tiempo de ejecución de los dos algoritmos comentados anteriormente  y 
+gracias a las tablas que proporcionamos con los distintos tiempos de ejecución de cada cota, realizaremos 
+una comprobación empírica de la complejidad haciendo uso de la cota sobreestimada, ajustada y subestimada.
+
+Los tiempos están medidos en microsegundos (μs).
+
+En el caso de que los tiempos fueran menores a 500 microsegundos (μs), la función se ejecutará 10 veces en el caso
+de la ordenación por inserción cuando el vector fue inicializado aleatoriamente y 1000 veces cuando fue inicializado
+ordenado ascendente. También se ejecutó 1000 veces cuando la ordenación se hizo mediante el algoritmo shell.
+El tiempo representado es la media del tiempo de ejecución, marcando dichos tiempos con un asterisco (*) a 
+la izquierda de las iteraciones.
+
+
+TABLAS DE ORDENACIÓN POR INSERCIÓN:
+
+INICIALIZACIÓN ALEATORIA:
+
+            n                   t(n)           t(n)/n^1.800           t(n)/n^2.000           t(n)/n^2.200
+*         500                 85.000               0.001178               0.000340              0.0000981
+*        1000                331.200               0.001319               0.000331              0.0000832
+         2000               1301.000               0.001487               0.000325              0.0000711
+         4000               5320.000               0.001747               0.000333              0.0000633
+         8000              20892.000               0.001970               0.000326              0.0000541
+        16000              83616.000               0.002264               0.000327              0.0000471
+        32000             336826.000               0.002619               0.000329              0.0000413
+          
+Donde:
+Cota subestimada: n^1.8.
+Cota ajustada:  n^2. La cual tiene una constante que tiende a 0.00033
+Cota sobreestimada: n^2.2.
+	
+INICIALIZACIÓN ASCENDENTE:
+ 
+            n                   t(n)           t(n)/n^0.950           t(n)/n^1.000           t(n)/n^1.050
+*         500                  0.955               0.002606               0.001910              0.0013999
+*        1000                  1.899               0.002682               0.001899              0.0013444
+*        2000                  3.829               0.002800               0.001914              0.0013092
+*        4000                  7.694               0.002912               0.001923              0.0012705
+*        8000                 15.248               0.002987               0.001906              0.0012161
+*       16000                 30.820               0.003125               0.001926              0.0011872
+*       32000                 61.363               0.003221               0.001918              0.0011416
+
+Donde:
+Cota subestimada: n^0.950.
+Cota ajustada: n^1. Cuya constante se aproxima a 0.0019.
+Cota sobreestimada: n^1.05.
+
+
+INICIALIZACIÓN DESCENDENTE:
+	 
+            n                   t(n)           t(n)/n^1.800           t(n)/n^2.000           t(n)/n^2.200
+*         500                164.700               0.002283               0.000659              0.0001901
+         1000                655.000               0.002608               0.000655              0.0001645
+         2000               2624.000               0.003000               0.000656              0.0001434
+         4000              10382.000               0.003409               0.000649              0.0001235
+         8000              41639.000               0.003926               0.000651              0.0001078
+        16000             167677.000               0.004540               0.000655              0.0000945
+        32000             673118.000               0.005234               0.000657              0.0000826
+ 
+Donde:
+Cota subestimada: n^1.8.
+Cota ajustada:  n^2. La cual tiene una constante que tiende 0.00065
+Cota sobreestimada: n^2.2.
+
+
+TABLAS DE ORDENACIÓN POR SHELL:
+
+INICIALIZACIÓN ALEATORIA:
+
+            n                   t(n)           t(n)/n^1.100           t(n)/n^1.200           t(n)/n^1.300
+*         500                 34.827               0.037415               0.020098              0.0107958
+*        1000                 81.043               0.040618               0.020357              0.0102027
+*        2000                184.656               0.043175               0.020190              0.0094411
+*        4000                419.269               0.045733               0.019954              0.0087059
+         8000                935.000               0.047579               0.019369              0.0078849
+        16000               2131.000               0.050588               0.019215              0.0072984
+        32000               5134.000               0.056858               0.020150              0.0071410
+
+          
+Donde:
+Cota subestimada: n^1.1.
+Cota ajustada:  n^1.2. La cual tiene una constante que tiende a 0.020
+Cota sobreestimada: n^1.3.
+	
+ASCENDENTE:
+ 
+            n                   t(n)           t(n)/n^1.050           t(n)/n^1.150           t(n)/n^1.300
+*         500                  9.705               0.014226               0.007642              0.0030084
+*        1000                 22.141               0.015675               0.007856              0.0027874
+*        2000                 50.077               0.017122               0.008007              0.0025603
+*        4000                111.085               0.018344               0.008004              0.0023066
+*        8000                244.433               0.019495               0.007936              0.0020613
+        16000                529.000               0.020377               0.007740              0.0018118
+        32000               1177.000               0.021896               0.007760              0.0016371
+
+Donde:
+Cota subestimada: n^1.050.
+Cota ajustada: n^1.150. Cuya constante se aproxima a 0.0077.
+Cota sobreestimada: n^1.300.
+
+
+DESCENDENTE:
+	 
+            n                   t(n)           t(n)/n^1.100           t(n)/n^1.140           t(n)/n^1.200
+*         500                 13.546               0.014553               0.011350              0.0078171
+*        1000                 31.131               0.015602               0.011836              0.0078198
+*        2000                 69.691               0.016295               0.012023              0.0076197
+*        4000                155.270               0.016936               0.012155              0.0073895
+*        8000                342.632               0.017435               0.012170              0.0070977
+        16000                745.000               0.017686               0.012008              0.0067176
+        32000               1660.000               0.018384               0.012141              0.0065152
+ 
+Donde:
+Cota subestimada: n^1.1.
+Cota ajustada:  n^1.140. La cual tiene una constante que tiende 0.012
+Cota sobreestimada: n^1.2.
+
+
+CONCLUSIÓN:
+Con las tablas obtenidas y las cotas podemos determinar que comparando los algoritmos de ordenación por inserción y ordenación shell el que tiene
+un tiempo de ejecución menor para la inicialización ascendente es el primer algoritmo mencionado, lo cual se puede confirmar con la cota ajustada que,
+en comparación con las demás es la más pequeña, siendo esta de n^1.
+
+Por último para la inicialización tanto descendente como aleatorio el mejor algoritmo es ordenación shell, lo cual se puede apreciaren los tiempo de ejecución.
+Siendo las cotas ajustadas mucho menores que las del algoritmo por inserción (n^1.14 y n^1.2 frente a n^2).
