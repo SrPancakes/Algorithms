@@ -1,0 +1,152 @@
+==6698== Memcheck, a memory error detector
+==6698== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==6698== Using Valgrind-3.21.0-d97fed7c3e-20230428 and LibVEX; rerun with -h for copyright info
+==6698== Command: ./shell
+==6698== Parent PID: 6365
+==6698== 
+--6698-- 
+--6698-- Valgrind options:
+--6698--    --leak-check=full
+--6698--    --show-leak-kinds=all
+--6698--    --track-origins=yes
+--6698--    --verbose
+--6698--    --log-file=valgrind-out.txt
+--6698-- Contents of /proc/version:
+--6698--   Linux version 6.2.0-34-generic (buildd@bos03-amd64-059) (x86_64-linux-gnu-gcc-11 (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #34~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Sep  7 13:12:03 UTC 2
+--6698-- 
+--6698-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed
+--6698-- Page sizes: currently 4096, max supported 4096
+--6698-- Valgrind library directory: /snap/valgrind/154/usr/libexec/valgrind
+--6698-- Reading syms from /home/rodrigo/Desktop/AL/labAS2/shell
+--6698-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--6698--   Considering /usr/lib/debug/.build-id/97/18d3757f00d2366056830aae09698dbd35e32c.debug ..
+--6698--   .. build-id is valid
+--6698-- Reading syms from /snap/valgrind/154/usr/libexec/valgrind/memcheck-amd64-linux
+--6698--    object doesn't have a dynamic symbol table
+--6698-- Warning: inlined fn name without absori
+--6698-- is shown as UnknownInlinedFun
+--6698-- Scheduler: using generic scheduler lock implementation.
+--6698-- Reading suppressions file: /snap/valgrind/154/usr/libexec/valgrind/default.supp
+==6698== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-6698-by-rodrigo-on-???
+==6698== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-6698-by-rodrigo-on-???
+==6698== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-6698-by-rodrigo-on-???
+==6698== 
+==6698== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==6698== don't want to do, unless you know exactly what you're doing,
+==6698== or are doing some strange experiment):
+==6698==   /snap/valgrind/154/usr/libexec/valgrind/../../bin/vgdb --pid=6698 ...command...
+==6698== 
+==6698== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==6698==   /path/to/gdb ./shell
+==6698== and then give GDB the following command
+==6698==   target remote | /snap/valgrind/154/usr/libexec/valgrind/../../bin/vgdb --pid=6698
+==6698== --pid is optional if only one valgrind process is running
+==6698== 
+--6698-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x581ecd5e (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--6698-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x581ecd78 (vgPlain_amd64_linux_REDIR_FOR_index)
+--6698-- Reading syms from /snap/valgrind/154/usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--6698-- Reading syms from /snap/valgrind/154/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==6698== WARNING: new redirection conflicts with existing -- ignoring it
+--6698--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x581ecd5e vgPlain_amd64_linux_REDIR_FOR_strlen
+--6698--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x04e0b4d0 strlen
+--6698-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4e0c700 (strcmp)
+--6698-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4e10920 (mempcpy)
+--6698-- Reading syms from /usr/lib/x86_64-linux-gnu/libm.so.6
+--6698--   Considering /usr/lib/debug/.build-id/d2/c7d1fdefc7a876b6017c090ccd55fb21e8d77f.debug ..
+--6698--   .. build-id is valid
+--6698-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--6698--   Considering /usr/lib/debug/.build-id/a4/3bfc8428df6623cd498c9c0caeb91aec9be4f9.debug ..
+--6698--   .. build-id is valid
+==6698== WARNING: new redirection conflicts with existing -- ignoring it
+--6698--     old: 0x050bbc60 (memalign            ) R-> (1011.0) 0x04e0a2e1 memalign
+--6698--     new: 0x050bbc60 (memalign            ) R-> (1017.0) 0x04e0a7c3 aligned_alloc
+==6698== WARNING: new redirection conflicts with existing -- ignoring it
+--6698--     old: 0x050bbc60 (memalign            ) R-> (1011.0) 0x04e0a2e1 memalign
+--6698--     new: 0x050bbc60 (memalign            ) R-> (1017.0) 0x04e0a751 aligned_alloc
+==6698== WARNING: new redirection conflicts with existing -- ignoring it
+--6698--     old: 0x050bbc60 (memalign            ) R-> (1011.0) 0x04e0a2e1 memalign
+--6698--     new: 0x050bbc60 (memalign            ) R-> (1017.0) 0x04e0a7c3 aligned_alloc
+==6698== WARNING: new redirection conflicts with existing -- ignoring it
+--6698--     old: 0x050bbc60 (memalign            ) R-> (1011.0) 0x04e0a2e1 memalign
+--6698--     new: 0x050bbc60 (memalign            ) R-> (1017.0) 0x04e0a751 aligned_alloc
+--6698-- REDIR: 0x50be720 (libc.so.6:strnlen) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be9e0 (libc.so.6:strpbrk) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be2e0 (libc.so.6:strcmp) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50dccd0 (libc.so.6:wcsnlen) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bf6d0 (libc.so.6:memset) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50db540 (libc.so.6:wcslen) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bfc10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50db370 (libc.so.6:wcschr) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be260 (libc.so.6:index) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be960 (libc.so.6:rindex) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bf5a0 (libc.so.6:memmove) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+==6698== Preferring higher priority redirection:
+--6698--     old: 0x051b69c0 (__memcpy_avx_unalign) R-> (2018.0) 0x04e0dc40 __memcpy_avx_unaligned_erms
+--6698--     new: 0x051b69c0 (__memcpy_avx_unalign) R-> (2018.1) 0x04e0f900 memmove
+--6698-- REDIR: 0x50db3f0 (libc.so.6:wcscmp) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bf9e0 (libc.so.6:stpncpy) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50db9b0 (libc.so.6:wmemchr) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be830 (libc.so.6:strncmp) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bfa70 (libc.so.6:strcasecmp) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be420 (libc.so.6:strcspn) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50db470 (libc.so.6:wcscpy) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be1d0 (libc.so.6:strcat) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bfb60 (libc.so.6:strncasecmp_l) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bf480 (libc.so.6:bcmp) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50c7570 (libc.so.6:memrchr) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50c1010 (libc.so.6:strchrnul) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be390 (libc.so.6:strcpy) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bfb10 (libc.so.6:strcasecmp_l) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be6a0 (libc.so.6:strlen) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50be8d0 (libc.so.6:strncpy) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50dba40 (libc.so.6:wmemcmp) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bf950 (libc.so.6:stpcpy) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bf3f0 (libc.so.6:memchr) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50beb00 (libc.so.6:strspn) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bf7d0 (libc.so.6:mempcpy) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50bfac0 (libc.so.6:strncasecmp) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x50c0f80 (libc.so.6:rawmemchr) redirected to 0x4a006e8 (_vgnU_ifunc_wrapper)
+--6698-- REDIR: 0x51b3810 (libc.so.6:__strrchr_avx2) redirected to 0x4e0ae50 (rindex)
+--6698-- REDIR: 0x51b39e0 (libc.so.6:__strlen_avx2) redirected to 0x4e0b410 (strlen)
+--6698-- REDIR: 0x50bb0a0 (libc.so.6:malloc) redirected to 0x4e05043 (malloc)
+--6698-- REDIR: 0x51b3600 (libc.so.6:__strchrnul_avx2) redirected to 0x4e10450 (strchrnul)
+--6698-- REDIR: 0x51b6980 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4e10560 (mempcpy)
+--6698-- REDIR: 0x50bb3e0 (libc.so.6:free) redirected to 0x4e07a19 (free)
+==6698== 
+==6698== Process terminating with default action of signal 2 (SIGINT)
+==6698==    at 0x1092A8: ord_ins (main.c:9)
+==6698==    by 0x109D8F: calcTime (utilities.c:58)
+==6698==    by 0x109752: timeTests (tests.c:27)
+==6698==    by 0x109486: main (main.c:43)
+==6698== 
+==6698== HEAP SUMMARY:
+==6698==     in use at exit: 65,024 bytes in 2 blocks
+==6698==   total heap usage: 7 allocs, 5 frees, 127,024 bytes allocated
+==6698== 
+==6698== Searching for pointers to 2 not-freed blocks
+==6698== Checked 172,080 bytes
+==6698== 
+==6698== 1,024 bytes in 1 blocks are still reachable in loss record 1 of 2
+==6698==    at 0x4E050B5: malloc (vg_replace_malloc.c:431)
+==6698==    by 0x5094BA3: _IO_file_doallocate (filedoalloc.c:101)
+==6698==    by 0x50A3CDF: _IO_doallocbuf (genops.c:347)
+==6698==    by 0x50A2F5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+==6698==    by 0x50A16D4: _IO_new_file_xsputn (fileops.c:1243)
+==6698==    by 0x50A16D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+==6698==    by 0x5096F1B: puts (ioputs.c:40)
+==6698==    by 0x10958B: testOrdenacion (tests.c:7)
+==6698==    by 0x10945E: main (main.c:41)
+==6698== 
+==6698== 64,000 bytes in 1 blocks are still reachable in loss record 2 of 2
+==6698==    at 0x4E050B5: malloc (vg_replace_malloc.c:431)
+==6698==    by 0x109692: timeTests (tests.c:22)
+==6698==    by 0x109486: main (main.c:43)
+==6698== 
+==6698== LEAK SUMMARY:
+==6698==    definitely lost: 0 bytes in 0 blocks
+==6698==    indirectly lost: 0 bytes in 0 blocks
+==6698==      possibly lost: 0 bytes in 0 blocks
+==6698==    still reachable: 65,024 bytes in 2 blocks
+==6698==         suppressed: 0 bytes in 0 blocks
+==6698== 
+==6698== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
