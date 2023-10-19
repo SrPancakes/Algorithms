@@ -10,7 +10,16 @@ void testOrdenacion(void (*func)(int v[], int n), int n, char *funcName){
     printf("Ordenación por %s: \n", funcName);
     func(v, n);
     listar_vector(v, n);
+    printf("Está ordenado? %d\n\n\n", isSorted(v, n));
+
+    revert(v, n);
+    printf("Inicialización descendente: \n");
+    listar_vector(v, n);
     printf("Está ordenado? %d\n", isSorted(v, n));
+    printf("Ordenación por %s: \n", funcName);
+    func(v, n);
+    listar_vector(v, n);
+    printf("Está ordenado? %d\n\n\n", isSorted(v, n));
 }
 
 /*  FUNCION timeTests()
@@ -71,7 +80,7 @@ void timeTests(){
     printRes(times[0], "insercion", "aleatorio",
              1.8, 2, 2.2);
     printRes(times[1], "shell", "aleatorio",
-             1, 1.21, 1.25);
+             1.1, 1.2, 1.3);
     printRes(times[2], "insercion", "ascendente",
              0.95, 1, 1.05);
     printRes(times[3], "shell", "ascendente",

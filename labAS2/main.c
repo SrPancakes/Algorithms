@@ -38,7 +38,7 @@ void ord_shell(int v[], int n) {
 
 int main(){
     inicializar_semilla();
-    testOrdenacion(ord_ins, 10, "insercion");
-    testOrdenacion(ord_shell, 10, "shell");
+    testOrdenacion(ord_ins, 17, "insercion");
+    testOrdenacion(ord_shell, 17, "shell");
     timeTests();
 }
