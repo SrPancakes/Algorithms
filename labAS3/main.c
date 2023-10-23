@@ -121,7 +121,7 @@ float exTime(int v[], int n, int k, int sorted){
     int i = 0;
     double a = microsegundos(), b;
     for(; i < k; i++){
-        if(sorted == 0 || sorted == -1) aleatorio(v, n);
+        if(sorted == 0) aleatorio(v, n);
         if(sorted == 2){ createDesc(v, n); }
     }
     b = microsegundos();
@@ -144,7 +144,7 @@ float calcCreateTime(int v[], int n, pmonticulo m, int k){
         }
         b = microsegundos();
 
-        return (((float)(b-a)) - exTime(v, n, k, -1)) / (float)k;
+        return (((float)(b-a)) - exTime(v, n, k, 0)) / (float)k;
     }
 
     return b - a;
