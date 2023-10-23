@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/labAS2.dir/main.c.o CMakeFiles/labAS2.dir/utils.c.o CMakeFiles/labAS2.dir/test.c.o -o labAS2 
