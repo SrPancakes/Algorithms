@@ -1,7 +1,35 @@
 #include "main.h"
 
+int main() {
+
+    inicializar_semilla();
+    timeTestCreate();
+    timeTestOrdenar();
+    return 0;
+}
+
 void inicializar_semilla() {
     srand(time(NULL));
+}
+
+void aleatorio(int values[], int n) {
+    int i = 0,
+            m=2*n+1;
+
+    for (; i < n; i++)
+        values[i] = (rand() % m) - n;
+}
+
+void createAsc(int values[], int n) {
+    int i;
+    for (i=0; i < n; i++)
+        values[i] = i;
+}
+
+void createDesc(int values[], int n) {
+    int i;
+    for (i=0; i < n; i++)
+        values[i] = n - i - 1;
 }
 
 double microsegundos() {
@@ -11,262 +39,195 @@ double microsegundos() {
     return (t.tv_usec + t.tv_sec * 1000000.0);
 }
 
-void insertar_array(pmonticulo m, const int *v, int n) {
+void listar_monticulo(pmonticulo m, int n) {
+    printf("[ ");
+    for (int i = 0; i < n; i++) {
+        printf("%3d ", m->vector[i]);
+    }
+    printf("]");
+}
+
+void hundir (pmonticulo m, int i) {
+    int hizq, hder, j=-1,aux;
+    while (j != i) {
+        hizq =  2*i+1;
+        hder =  2*i+2;
+        j = i;
+        if (hder <= m->ultimo && (m->vector[hder] < m->vector[i])) {
+            i = hder;
+        }
+        if (hizq <= m->ultimo && (m->vector[hizq] < m->vector[i])) {
+            i = hizq;
+        }
+        aux=m->vector[j];
+        m->vector[j]=m->vector[i];
+        m->vector[i]=aux;
+    }
+
+}
+
+void crearMonticulo(const int v[], int n, pmonticulo m) {
     int i;
-    for (i = 0; i < n; i++) {
+    for ( i = 0; i < n; i++) {
         m->vector[i] = v[i];
     }
-    m->ultimo = n - 1;
-}
-
-void mostrar_vector(int v[], int n) {
-    int i;
-    printf("Vector: ");
-    for (i = 0; i < n; i++) {
-        printf("%d  ", v[i]);
-    }
-    printf("\n\n");
-}
-
-void aleatorio(int *v, int n, int bit_c) {
-    int i,
-        m = 2 * n + 1;
-    for (i = 0; i < n; i++) {
-        v[i] = ((rand() % m) - n);
-    }
-    if (bit_c == 1) {
-        printf("Vector aleatorio: ");
-        for (i = 0; i < n; i++) {
-            printf("%d   ", v[i]);
-        }
-    }
-}
-
-void ascendente(int *v, int n, int bit_c) {
-    int i;
-    for (i = 0; i < n; i++) {
-        v[i] = i;
-    }
-    if (bit_c == 1) {
-        printf("Vector ascendente: ");
-        for (i = 0; i < n; i++) {
-            printf("%d   ", v[i]);
-        }
-    }
-}
-
-void descendente(int v[], int n, int bit_c) {
-    int i;
-    for (i = 0; i < n; i++) {
-        v[i] = n - i;
-    }
-    if (bit_c == 1) {
-        printf("Vector descendente: ");
-        for (i = 0; i < n; i++) {
-            printf("%d   ", v[i]);
-        }
-    }
-}
-
-void intercambiar(pmonticulo m, int i, int j) {
-    int aux;
-    aux = m->vector[i];
-    m->vector[i] = m->vector[j];
-    m->vector[j] = aux;
-}
-
-int monticulo_vacio(pmonticulo m) {
-    if (m->ultimo == 0) {
-        return 1; // Montículo vacío
-    } else {
-        return 0; // Montículo no vacío
-    }
-}
-
-void hundir(pmonticulo m, int i) {
-    int HijoIzq, HijoDer, j;
-    do {
-        HijoIzq = 2 * i + 1;
-        HijoDer = 2 * i + 2;
-        j = i;
-        if ((HijoDer <= m->ultimo) && (m->vector[HijoDer] > m->vector[i])) {
-            i = HijoDer;
-        }
-        if ((HijoIzq <= m->ultimo) && (m->vector[HijoIzq] > m->vector[i])) {
-            i = HijoIzq;
-        }
-        if (j != i)
-            intercambiar(m, i, j);
-    } while (j != i);
-}
-
-void crear_monticulo(int *vec, pmonticulo m, int n) {
-    int i;
-    insertar_array(m, vec, n);
-    for (i = m->ultimo / 2; i > -1; i--) {
+    m->ultimo=n-1;
+    for(i = (m->ultimo)/2; i>=0;i--){
         hundir(m, i);
     }
 }
 
-int quitar_menor(pmonticulo m) {
-    int x;
-    if (monticulo_vacio(m)) {
-        printf("Error al eliminar el máximo: el montículo está vacío");
-        return +1;
-    } else {
+void OrdenarPorMonticulos(int v[], int n){
+    int i = 0;
+    pmonticulo m = malloc(sizeof (struct monticulo));
+    crearMonticulo(v, n, m);
+    for(; i < n; i++) v[i] = quitarMenor(m);
+    free(m);
+
+}
+
+int quitarMenor(pmonticulo m){
+    int x = 0;
+    if(m->ultimo < 0) printf("MONTICULO VACIO");
+    else{
         x = m->vector[0];
         m->vector[0] = m->vector[m->ultimo];
-        m->ultimo++;
-        if (m->ultimo > +1) {
-            hundir(m, 0);
-        }
-        return x;
+        m->ultimo--;
+        if(m->ultimo > -1) hundir(m, 0);
     }
+    return x;
+
 }
 
-void ord_monticulo(int v[], int n) {
-    int i;
-    pmonticulo m = malloc(sizeof(struct monticulo));
-    crear_monticulo(v, m, n);
-    for (i = n - 1; i > -1; i--) {
-        v[i] = quitar_menor(m);
-    }
-}
-
-void medicion_heapsort(void (*get_vector)(int *v, int n, int bit_c),
-                       double under, double est, double over) {
-    double x, y, z, t1, t2, tiempo, calculos;
-    int n, i, iter = 1, *vec = (int*) malloc(sizeof(int) * TAM);
-    char asterisco = ' ';
+void print_res(float time[], char *type, char *method,
+               double under, double est, double over){
+    int i = 0; double n; char *ast;
+    printf("\n\nVerificación tiempos del algoritmo %s %s\n\n",
+           method, type);
     printf("%13s%23s%18s%.3f%18s%.3f%18s%.3f\n", "n", "t(n)",
            "t(n)/n^",
            under, "t(n)/n^", est, "t(n)/n^", over);
-    printf("\n\n");
-    for (n = 1000; n < TAM+1; n = n*2) {
-        get_vector(vec, 12, 0);
-        t1 = microsegundos();
-        ord_monticulo(vec, n);
-        t2 = microsegundos();
-        tiempo = t2 - t1;
-        if (tiempo < 500) {
-            asterisco = '*';
-            iter = 500;
-            do {
-                iter = iter * 2;
-                t1 = microsegundos();
-                for (i = 0; i < iter; i++) {
-                    get_vector(vec, 12, 0);
-                    ord_monticulo(vec, n);
-                }
-                t2 = microsegundos();
-                tiempo = t2 - t1;
-            } while (tiempo < 500);
-            t1 = microsegundos();
-            for (i = 0; i < iter; i++) {
-                get_vector(vec, n, 0);
-            }
-            t2 = microsegundos();
-            calculos = t2 - t1;
-            tiempo = (tiempo - calculos) / iter;
+    for(;i < 7; i++){
+        n = 500 * pow(2.0, i);
+        if(time[i] < 500) ast = YELLOW"*"; else ast = RESET" ";
+        printf("%s%12.0f%23.3f%23f%23f%23.7f\n"RESET, ast, n,
+                time[i], time[i] / pow(n, under),
+                time[i] / pow(n, est), time[i] / pow(n,
+                                                     over));
+    }
+}
+
+/*
+  MEDIR TIEMPO RESIDUAL
+  La función exTime elimina el exceso de tiempo
+  que se perdió al inicializar el vector las K veces
+  o si se tuvo que revertir
+*/
+
+float exTime(int v[], int n, int k, int sorted){
+    int i = 0;
+    double a = microsegundos(), b;
+    for(; i < k; i++){
+        if(sorted == 0) aleatorio(v, n);
+        if(sorted == 2){ createDesc(v, n); }
+    }
+    b = microsegundos();
+    return b-a;
+}
+
+float calcCreateTime(int v[], int n, pmonticulo m, int k){
+    int i = 0;
+    double a, b;
+    aleatorio(v, i);
+    a = microsegundos();
+    crearMonticulo(v, n, m);
+    b = microsegundos();
+
+    if((b-a) < 500){
+        a = microsegundos();
+        for(; i < k; i++){
+            aleatorio(v, n);
+            crearMonticulo(v, n, m);
         }
-        x = tiempo / (n * pow(log(n), under));
-        y = tiempo / (n * pow(log(n), est));
-        z = tiempo / (n * pow(log(n), over));
-        printf("%14d %19f %c %14.5f %16.5f %17.6f %15d \n",n, tiempo, asterisco, x, y, z, iter);
-        asterisco=' ';
-        iter = 1;
+        b = microsegundos();
+
+        return (((float)(b-a)) - exTime(v, n, k, 0)) / (float)k;
     }
-    printf("\n\n");
+
+    return b - a;
 }
 
-void medicion_crear_monticulo() {
-    double x, y, z, t1, t2, t, calculos;
-    int n, i, iter = 1, *vec = malloc(sizeof (int) * TAM);
-    char asterisco = ' ';
-    pmonticulo m = malloc(sizeof(struct monticulo));
-    printf("\n%14s %15s %20s %15s %19s %15s\n",
-           "n","t(n)", "t(n)/n^0.9"," t(n)/n","t(n)/n^1.1", "Iter(*)" );
-    printf("\n\n");
-    for (n = 1000; n < TAM+1; n = n*2) {
-        ascendente(vec, n, 0);
-        t1 = microsegundos();
-        crear_monticulo(vec, m, n);
-        t2 = microsegundos();
-        t = t2 - t1;
-        if (t < 500) {
-            asterisco = '*';
-            iter = 500;
-            do {
-                iter = iter * 2;
-                t1 = microsegundos();
-                for (i =0; i < iter; i++) {
-                    ascendente(vec, n, 0);
-                    crear_monticulo(vec, m, n);
-                }
-                t2 = microsegundos();
-                t = t2 - t1;
-            } while (t < 500);
-            t1 = microsegundos();
-            for (i = 0; i < iter; i++) {
-                ascendente(vec, n, 0);
+void timeTestCreate(){
+    pmonticulo m = malloc(sizeof (struct monticulo));
+    int i, j, aux = 0;
+    int *v;
+    float bestTime[7], tempTime[3][7];
+    for(i = 500; i <= 32000; i*=2){
+        v = malloc(sizeof (int) * i);
+        for(j = 0; j < 3; j++){
+            tempTime[j][aux] =
+                    calcCreateTime(v, i, m, 1000);
+            if(j == 0) bestTime[aux] = tempTime[j][aux];
+            else{
+                if(tempTime[j][aux] < bestTime[aux])
+                    bestTime[aux] = tempTime[j][aux];
             }
-            t2 = microsegundos();
-            calculos = t2 - t1;
-            t = (t - calculos) / iter;
         }
-        x = t / pow(n, 0.9);
-        y = t / (n);
-        z = t / pow(n, 1.1);
-        printf("%14d %19.3f %c %14.4f %16.5f %17.5f %15d \n",n, t, asterisco, x, y, z, iter);
-        asterisco=' ';
-        iter = 1;
+        free(v);
+        aux++;
     }
-    printf("\n\n");
+    free(m);
+    print_res(bestTime, "", "crearMonticulo",
+              0.9, 1.0, 1.1);
 }
 
-void test() {
-    pmonticulo m = malloc(sizeof(struct monticulo));
-    int *vec = malloc(TAM);
-    printf("\n               Test: \n");
-    printf("____________________________________\n\n\n");
-    aleatorio(vec, 12, 1);
-    printf("\n");
-    crear_monticulo(vec, m, 12);
-    ord_monticulo(vec, 12);
-    printf("\nOrdenacion por montículos\n");
-    mostrar_vector(m->vector, 12);
-}
+float calcOrdenarTime(int v[], int n, int k, int sorted){
+    int i = 0;
+    double a, b;
+    if(sorted == 1) createAsc(v, n);
+    else if(sorted == 2) createDesc(v, n);
+    else aleatorio(v, i);
+    a = microsegundos();
+    OrdenarPorMonticulos(v, n);
+    b = microsegundos();
 
-void calentar(){
-    int i;
-    for (i=0;i<10000000;i++){
-        i=i+181;
+    if((b-a) < 500){
+        a = microsegundos();
+        for(; i < k; i++){
+            if(sorted == 0) aleatorio(v, n);
+            if(sorted == 2){ createDesc(v, n); }
+            OrdenarPorMonticulos(v, n);
+        }
+        b = microsegundos();
+
+        return (((float)(b-a)) - exTime(v, n, k, sorted)) / (float)k;
     }
+
+    return b - a;
 }
 
-void print_res() {
-    calentar();
-    test();
-    printf("Creación de monticulos a partir de vectores ascendentes\n");
-    medicion_crear_monticulo();
-    printf("Los tiempos acompañados de un asterisco (*) han sido ");
-    printf("medidos con un numero de iteraciones variable"" en un bucle\n\n");
-    printf("Ordenación por montículos con vector aleatorio: \n\n");
-    medicion_heapsort(aleatorio, .6, 1, 1.2);
-    printf("Los tiempos acompañados de un asterisco (*) han sido ");
-    printf("medidos con un numero de iteraciones variable"" en un bucle\n\n");
-    printf("Ordenación por montículos con vector descendente: \n\n");
-    medicion_heapsort(descendente, .6, 1, 1.2);
-    printf("Los tiempos acompañados de un asterisco (*) han sido ");
-    printf("medidos con un numero de iteraciones variable"" en un bucle\n\n");
-    printf("Ordenación por montículos con vector ascendente: \n\n");
-    medicion_heapsort(ascendente, .6, 1, 1.2);
-    printf("Los tiempos acompañados de un asterisco (*) han sido ");
-    printf("medidos con un numero de iteraciones variable"" en un bucle\n\n");
+void timeTestOrdenar(){
+    float times[3][7];
+    int aux = 0, i, j, k;
+    float tempTime[6], bestTime[6];
+    int *v;
+    for(i = 500; i <= 32000; i*=2){
+        v = malloc(sizeof (int) * i);
+        for(j = 0; j < 3; j++){
+            for(k = 0; k < 3; k++){
+                tempTime[k] = calcOrdenarTime(v, i, 1000, k/2);
+                if(j == 0) bestTime[k] = tempTime[k];
+                if(tempTime[k] <= bestTime[k]) bestTime[k] = tempTime[k];
+                times[k][aux] = bestTime[k];
+            }
+        }
+        aux++;
+        free(v);
+    }
+    print_res(times[0], "con vector aleatorio",
+              "OrdenarPorMonticulos",1, 1.1, 1.2);
+    print_res(times[1], "con vector ascendente",
+              "OrdenarPorMonticulos",1, 1.1, 1.2);
+    print_res(times[2], "con vector descendente",
+              "OrdenarPorMonticulos",1.1, 1.2, 1.3);
 }
-
-int main() {
-    inicializar_semilla();
-    print_res();
-}
-

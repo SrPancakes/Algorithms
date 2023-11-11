@@ -1,37 +1,46 @@
-#ifndef PRUEBA_MAIN_H
-#define PRUEBA_MAIN_H
+//
+// Created by Lucas Núñez González on 23/10/23.
+//
 
-#include <stdio.h>
+#ifndef LABAS3_MAIN_H
+#define LABAS3_MAIN_H
+
+/* -- LIBRARIES -- */
 #include <stdlib.h>
+#include <stdio.h>
 #include <time.h>
-#include <math.h>
 #include <sys/time.h>
+#include <math.h>
+
+/* -- COLORS --*/
+#define RED     "\x1b[31m"
+#define RESET   "\x1b[0m"
+#define YELLOW  "\x1b[33m"
 
 #define TAM 256000
-
 struct monticulo {
-    int vector[TAM];
     int ultimo;
+    int vector[TAM];
 };
 typedef struct monticulo * pmonticulo;
 
-void inicializar_semilla();
-double microsegundos();
-void insertar_array(pmonticulo, const int*, int);
-void mostrar_vector(int[], int);
-void aleatorio(int*, int, int);
-void ascendente(int*, int, int);
-void descendente(int*, int, int);
-void intercambiar(pmonticulo, int, int);
-int monticulo_vacio(pmonticulo);
-void hundir(pmonticulo, int);
-void crear_monticulo(int*, pmonticulo, int);
-int quitar_menor(pmonticulo);
-void ord_monticulo(int[], int);
-void medicion_heapsort(void (*)(int*, int, int), double, double, double);
-void medicion_crear_monticulo();
-void test();
-void calentar();
-void print_res();
+/* -- HEADERS -- */
+void listar_monticulo(pmonticulo, int n);
+void crearMonticulo(const int v[], int n, pmonticulo m);
+void OrdenarPorMonticulos(int v[], int n);
+void hundir (pmonticulo m, int i);
+int quitarMenor(pmonticulo m);
 
-#endif //PRUEBA_MAIN_H
+void inicializar_semilla();
+void aleatorio(int values[], int n);
+void createAsc(int values[], int n);
+void createDesc(int values[], int n);
+double microsegundos();
+float calcCreateTime(int v[], int n, pmonticulo m, int k);
+float calcOrdenarTime(int v[], int n, int k, int sorted);
+void timeTestCreate();
+void timeTestOrdenar();
+void print_res(float time[], char *type, char *method, double under, double est, double over);
+
+
+#endif //LABAS3_MAIN_H
