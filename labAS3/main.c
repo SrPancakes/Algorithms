@@ -7,7 +7,7 @@ int main() {
     int *v = malloc(sizeof (int)* 10);
     aleatorio(v, 10);
     crearMonticulo(v, 10, m);
-    listar_vector(v, 10);
+    listar_monticulo(m, m->ultimo);
 
     return 0;
 }
@@ -24,10 +24,17 @@ void aleatorio(int values[], int n) {
         values[i] = (rand() % m) - n;
 }
 
+void listar_monticulo(pmonticulo m, int n) {
+    printf("[ ");
+    for (int i = 0; i < n; i++) {
+        printf("%3d ", m->vector[i]);
+    }
+    printf("]");
+}
+
 void crearMonticulo(const int v[], int n, pmonticulo m) {
     int i = 1,
-        k = i,
-        heap, j;
+        k, heap, j, v2;
 
    m->ultimo = n;
 
@@ -37,8 +44,8 @@ void crearMonticulo(const int v[], int n, pmonticulo m) {
 
 
     for (i = n / 2; i >= 1; i--) {
-        int v2 = m->vector[k];
-        heap = 0;
+        k = i, heap = 0;
+        v2 = m->vector[k];
 
         while (!heap && 2 * k <= n) {
             j = 2 * k;
