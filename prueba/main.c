@@ -30,7 +30,7 @@ void mostrar_vector(int v[], int n) {
 
 void aleatorio(int *v, int n, int bit_c) {
     int i,
-            m = 2 * n + 1;
+        m = 2 * n + 1;
     for (i = 0; i < n; i++) {
         v[i] = ((rand() % m) - n);
     }
@@ -169,7 +169,7 @@ void medicion_heapsort(void (*get_vector)(int *v, int n, int bit_c),
             calculos = t2 - t1;
             tiempo = (tiempo - calculos) / iter;
         }
-        x = tiempo / (n * pow(n, under));
+        x = tiempo / (n * pow(log(n), under));
         y = tiempo / (n * pow(log(n), est));
         z = tiempo / (n * pow(log(n), over));
         printf("%14d %19f %c %14.5f %16.5f %17.6f %15d \n",n, tiempo, asterisco, x, y, z, iter);
