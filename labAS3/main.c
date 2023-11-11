@@ -225,9 +225,9 @@ void timeTestOrdenar(){
         free(v);
     }
     print_res(times[0], "con vector aleatorio",
-              "OrdenarPorMonticulos",1, 1.1, 1.2);
+              "OrdenarPorMonticulos", .9, 1.075, 1.2);
     print_res(times[1], "con vector ascendente",
-              "OrdenarPorMonticulos",1, 1.1, 1.2);
+              "OrdenarPorMonticulos", 1.05, 1.08, 1.2);
     print_res(times[2], "con vector descendente",
-              "OrdenarPorMonticulos",1.1, 1.2, 1.3);
+              "OrdenarPorMonticulos", 1, 1.1, 1.2);
 }
