@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/lucas/CLionProjects/ALG/labAS5/build",
+  "command": "/usr/bin/clang   -g -std=gnu11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -o CMakeFiles/labAS5.dir/main.c.o -c /Users/lucas/CLionProjects/ALG/labAS5/main.c",
+  "file": "/Users/lucas/CLionProjects/ALG/labAS5/main.c",
+  "output": "CMakeFiles/labAS5.dir/main.c.o"
+}
+]

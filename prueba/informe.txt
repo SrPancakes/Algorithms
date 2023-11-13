@@ -1,0 +1,125 @@
+TITLE: Algoritmos Práctica 2
+AUTHOR 1: Rodrigo Méijome Quintana     LOGIN 1: rodrigo.meijome
+AUTHOR 2: Lucas Núñez González        LOGIN 2: l.nunezg
+GROUP: 2.4.3
+DATE: 18/10/2023
+
+La práctica fue realizada con este dispositivo -->
+Máquina: Intel i5-7200U (4) @ 3.100GHz (8GB RAM)
+Máquina: AMD Ryzen 7 5800h (16) @ 4.400GHz (16GB RAM)
+OS:      Ubuntu 22.04.3 LTS
+Kernel:  Linux 6.2.0-33-generic
+
+INTRODUCCIÓN:
+
+Este informe aborda la verificación empírica de los tiempos de ejecución de los algoritmos 
+"crearMonticulo" y "OrdenarPorMonticulos". El propósito principal es analizar el rendimiento 
+de estos algoritmos en distintos escenarios y tamaños de datos.
+
+Los tiempos están medidos en microsegundos (μs).
+
+En el caso de que los tiempos fueran menores a 500 microsegundos (μs), se ejecutará la función un número
+determinado de veces para poder realizar una media de los tiempos de ejecución y así extraer una medición 
+mucho más precisa. Estos campos serán resaltados con un asterisco (*) para indicar dicho procedimiento.
+
+
+VERIFICACIÓN DE TIEMPOS DEL ALGORITMO "crearMonticulo":
+
+En esta sección, se presentan los resultados de la verificación empírica de los tiempos de 
+ejecución del algoritmo "crearMonticulo". Se utilizaron distintos tamaños de datos (n) y se calcularon 
+los tiempos medios de ejecución.
+
+            n                   t(n)           t(n)/n^0.900           t(n)/n^1.000           t(n)/n^1.100
+*         500                  8.452               0.031469               0.016904              0.0090801
+*        1000                 13.414               0.026764               0.013414              0.0067229
+*        2000                 26.759               0.028612               0.013380              0.0062566
+*        4000                 53.588               0.030705               0.013397              0.0058452
+*        8000                105.728               0.032465               0.013216              0.0053801
+*       16000                207.767               0.034188               0.012985              0.0049322
+*       32000                416.175               0.036698               0.013005              0.0046090
+
+Donde:
+Cota subestimada: n^0.9.
+Cota ajustada:  n^1. La cual tiene una constante que tiende a 0.0132
+Cota sobreestimada: n^1.1.
+
+
+VERIFICACIÓN DE TIEMPOS DEL ALGORITMO "OrdenarPorMonticulos":
+
+A continuación, se presentan los resultados de la verificación empírica del algoritmo "OrdenarPorMonticulos". 
+Se realizaron pruebas con vectores aleatorios, ascendentes y descendentes, y se calcularon los tiempos medios de 
+ejecución para distintos tamaños de datos (n).
+
+
+VECTOR ALEATORIO:
+
+            n                   t(n)           t(n)/n^1.000           t(n)/n^1.100           t(n)/n^1.200
+*         500                 40.952               0.081904               0.043995              0.0236326
+*        1000                 89.853               0.089853               0.045033              0.0225701
+*        2000                197.923               0.098962               0.046277              0.0216402
+*        4000                426.937               0.106734               0.046569              0.0203185
+         8000                721.000               0.090125               0.036689              0.0149358
+        16000               1489.000               0.093063               0.035348              0.0134261
+        32000               3060.000               0.095625               0.033889              0.0120100
+
+Donde:
+Cota subestimada: n^1.
+Cota ajustada:  n^1.1. La cual tiene una constante que tiende a 0.035
+Cota sobreestimada: n^1.2.
+
+
+Vector Ascendente:
+
+            n                   t(n)           t(n)/n^1.000           t(n)/n^1.100           t(n)/n^1.200
+*         500                 40.889               0.081778               0.043928              0.0235962
+*        1000                 89.762               0.089762               0.044988              0.0225472
+*        2000                198.270               0.099135               0.046358              0.0216781
+*        4000                426.132               0.106533               0.046481              0.0202802
+         8000                721.000               0.090125               0.036689              0.0149358
+        16000               1490.000               0.093125               0.035372              0.0134351
+        32000               3064.000               0.095750               0.033933              0.0120257
+
+Donde:
+Cota subestimada: n^1
+Cota ajustada:  n^1.1 La cual tiene una constante que tiende a 0.035
+Cota sobreestimada: n^1.2
+
+
+Vector Descendente:
+
+          n                   t(n)           t(n)/n^1.100           t(n)/n^1.200           t(n)/n^1.300
+*         500                 28.121               0.030211               0.016228              0.0087171
+*        1000                 70.480               0.035324               0.017704              0.0088729
+*        2000                160.677               0.037568               0.017568              0.0082151
+*        4000                346.477               0.037793               0.016489              0.0071944
+         8000                720.000               0.036638               0.014915              0.0060718
+        16000               1486.000               0.035277               0.013399              0.0050894
+        32000               3064.000               0.033933               0.012026              0.0042618
+
+Donde:
+Cota subestimada: n^1.1
+Cota ajustada:  n^1.2 La cual tiene una constante que tiende a 0.0132
+Cota sobreestimada: n^1.3
+
+    
+Conclusiones:
+
+Tras analizar los resultados de la verificación empírica de los tiempos de ejecución del algoritmo "OrdenarPorMonticulos", se destaca su eficiencia en distintos escenarios, lo cual permite identificar situaciones particulares donde este algoritmo sobresale:
+
+Vectores Aleatorios o Ascendentes:
+    - El algoritmo "OrdenarPorMonticulos" demuestra un rendimiento notablemente eficiente para la 
+      ordenación de vectores aleatorios o ascendentes. Los tiempos de ejecución son competitivos y 
+      muestran una relación sublineal con el tamaño de los datos (n).
+    - Se recomienda utilizar "OrdenarPorMonticulos" en situaciones donde los datos no siguen un 
+      patrón específico o están previamente ordenados de manera ascendente.
+
+Vectores Descendentes:
+    - Aunque el rendimiento del algoritmo "OrdenarPorMonticulos" es inferior en comparación con casos 
+      aleatorios o ascendentes, sigue siendo una opción viable para la ordenación de vectores descendentes.
+    - En situaciones donde los datos ya están ordenados de manera descendente, "OrdenarPorMonticulos" sigue 
+      siendo una alternativa eficiente, especialmente cuando se compara con otros algoritmos que podrían 
+      experimentar un mayor impacto en este escenario.
+
+Esta conclusión destaca que el algoritmo "OrdenarPorMonticulos" es versátil y ofrece eficiencia en diversas 
+situaciones de ordenación, lo que lo convierte en una elección sólida para una amplia gama de aplicaciones y 
+conjuntos de datos.

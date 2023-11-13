@@ -1,0 +1,24 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lucas/CLionProjects/ALG/labAS3/main'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002A88, symSize: 0x38 }
+  - { offsetInCU: 0x4F, offset: 0x4F, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100002A88, symSize: 0x38 }
+  - { offsetInCU: 0x68, offset: 0x68, size: 0x8, addend: 0x0, symName: _inicializar_semilla, symObjAddr: 0x38, symBinAddr: 0x100002AC0, symSize: 0x1C }
+  - { offsetInCU: 0x7D, offset: 0x7D, size: 0x8, addend: 0x0, symName: _aleatorio, symObjAddr: 0x54, symBinAddr: 0x100002ADC, symSize: 0x90 }
+  - { offsetInCU: 0xCB, offset: 0xCB, size: 0x8, addend: 0x0, symName: _listar_monticulo, symObjAddr: 0xE4, symBinAddr: 0x100002B6C, symSize: 0x94 }
+  - { offsetInCU: 0x119, offset: 0x119, size: 0x8, addend: 0x0, symName: _crearMonticulo, symObjAddr: 0x178, symBinAddr: 0x100002C00, symSize: 0x204 }
+  - { offsetInCU: 0x19F, offset: 0x19F, size: 0x8, addend: 0x0, symName: _createAsc, symObjAddr: 0x37C, symBinAddr: 0x100002E04, symSize: 0x58 }
+  - { offsetInCU: 0x1DF, offset: 0x1DF, size: 0x8, addend: 0x0, symName: _createDesc, symObjAddr: 0x3D4, symBinAddr: 0x100002E5C, symSize: 0x60 }
+  - { offsetInCU: 0x21F, offset: 0x21F, size: 0x8, addend: 0x0, symName: _OrdenarPorMonticulos, symObjAddr: 0x434, symBinAddr: 0x100002EBC, symSize: 0x14 }
+  - { offsetInCU: 0x251, offset: 0x251, size: 0x8, addend: 0x0, symName: _quitarMenor, symObjAddr: 0x448, symBinAddr: 0x100002ED0, symSize: 0x1CC }
+  - { offsetInCU: 0x2BF, offset: 0x2BF, size: 0x8, addend: 0x0, symName: _revertArray, symObjAddr: 0x614, symBinAddr: 0x10000309C, symSize: 0xA4 }
+  - { offsetInCU: 0x30D, offset: 0x30D, size: 0x8, addend: 0x0, symName: _print_res, symObjAddr: 0x6B8, symBinAddr: 0x100003140, symSize: 0x23C }
+  - { offsetInCU: 0x3A2, offset: 0x3A2, size: 0x8, addend: 0x0, symName: _exTime, symObjAddr: 0x8F4, symBinAddr: 0x10000337C, symSize: 0xC0 }
+  - { offsetInCU: 0x41E, offset: 0x41E, size: 0x8, addend: 0x0, symName: _calcCreateTime, symObjAddr: 0x9B4, symBinAddr: 0x10000343C, symSize: 0x140 }
+  - { offsetInCU: 0x49A, offset: 0x49A, size: 0x8, addend: 0x0, symName: _timeTestCreate, symObjAddr: 0xAF4, symBinAddr: 0x10000357C, symSize: 0x1F8 }
+  - { offsetInCU: 0x512, offset: 0x512, size: 0x8, addend: 0x0, symName: _calcOrdenarTime, symObjAddr: 0xCEC, symBinAddr: 0x100003774, symSize: 0x1C4 }
+  - { offsetInCU: 0x58E, offset: 0x58E, size: 0x8, addend: 0x0, symName: _timeTestOrdenar, symObjAddr: 0xEB0, symBinAddr: 0x100003938, symSize: 0x2AC }
+  - { offsetInCU: 0x618, offset: 0x618, size: 0x8, addend: 0x0, symName: _microsegundos, symObjAddr: 0x115C, symBinAddr: 0x100003BE4, symSize: 0x70 }
+  - { offsetInCU: 0x640, offset: 0x640, size: 0x8, addend: 0x0, symName: _testCrearMonticulo, symObjAddr: 0x11CC, symBinAddr: 0x100003C54, symSize: 0xE0 }
+...

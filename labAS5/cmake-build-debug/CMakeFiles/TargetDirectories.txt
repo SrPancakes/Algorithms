@@ -1,0 +1,3 @@
+/Users/lucas/CLionProjects/ALG/labAS5/cmake-build-debug/CMakeFiles/labAS5.dir
+/Users/lucas/CLionProjects/ALG/labAS5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/lucas/CLionProjects/ALG/labAS5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
